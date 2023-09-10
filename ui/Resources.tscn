@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf64h76l0kcqa"]
+
+[ext_resource type="Theme" uid="uid://d8haknqim6pt" path="res://themes/uitheme.tres" id="1_r2s2m"]
+[ext_resource type="Script" path="res://ui/Resources.gd" id="2_8nea2"]
+
+[node name="Resources" type="Tree"]
+offset_right = 167.0
+offset_bottom = 118.0
+theme = ExtResource("1_r2s2m")
+script = ExtResource("2_8nea2")

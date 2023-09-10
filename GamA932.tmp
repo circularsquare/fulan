@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://3xbil1iaudma"]
+
+[ext_resource type="PackedScene" uid="uid://bof268p1wvlap" path="res://ui/UI.tscn" id="1_j5gsw"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+stretch = true
+stretch_shrink = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(640, 360)
+render_target_update_mode = 4
+
+[node name="UI" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_j5gsw")]
+custom_minimum_size = Vector2(0, 0)
+offset_bottom = 360.0

@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://bof268p1wvlap"]
+
+[ext_resource type="Theme" uid="uid://d8haknqim6pt" path="res://themes/uitheme.tres" id="1_33u75"]
+[ext_resource type="PackedScene" uid="uid://cf64h76l0kcqa" path="res://ui/Resources.tscn" id="2_44g0s"]
+[ext_resource type="Script" path="res://ui/UI.gd" id="2_soilq"]
+
+[node name="UI" type="Control"]
+custom_minimum_size = Vector2(640, 480)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 480.0
+theme = ExtResource("1_33u75")
+script = ExtResource("2_soilq")
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.858824, 0.964706, 1, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 119.0
+offset_right = 297.0
+offset_bottom = 142.0
+text = "hi!"
+
+[node name="Button" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = -72.0
+offset_right = 187.0
+offset_bottom = -54.0
+text = "button
+"
+
+[node name="Resources" parent="." instance=ExtResource("2_44g0s")]
+layout_mode = 0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="timeout" from="Timer" to="Resources" method="_on_timer_timeout"]
